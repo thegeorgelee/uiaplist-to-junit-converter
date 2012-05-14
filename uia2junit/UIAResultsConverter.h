@@ -15,7 +15,7 @@
 @property (nonatomic, retain) NSDictionary *commandLineArgs;
 
 - (id) initWithCommandLineArgs:(NSDictionary *)args;
-- (NSXMLDocument *) convert;
+- (NSXMLDocument *) convert:(NSDictionary *)plist;
 - (void) run;
 
 
