@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		754BE40F155CBB9D00E3EE42 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 754BE40E155CBB9D00E3EE42 /* main.c */; };
+		75253573155F240800B61FF5 /* UIASample.m in Sources */ = {isa = PBXBuildFile; fileRef = 75253572155F240800B61FF5 /* UIASample.m */; };
+		752535781561086600B61FF5 /* UIATestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 752535771561086600B61FF5 /* UIATestCase.m */; };
+		754BE40F155CBB9D00E3EE42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 754BE40E155CBB9D00E3EE42 /* main.m */; };
 		754BE411155CBB9D00E3EE42 /* uia2junit.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 754BE410155CBB9D00E3EE42 /* uia2junit.1 */; };
+		754BE418155CBC4600E3EE42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754BE417155CBC4600E3EE42 /* Foundation.framework */; };
+		754BE420155CC77D00E3EE42 /* UIAResultsConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 754BE41F155CC77D00E3EE42 /* UIAResultsConverter.m */; };
+		754BE424155CD13700E3EE42 /* KUCommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 754BE423155CD13700E3EE42 /* KUCommandLine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +30,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		75253571155F240800B61FF5 /* UIASample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIASample.h; sourceTree = "<group>"; };
+		75253572155F240800B61FF5 /* UIASample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIASample.m; sourceTree = "<group>"; };
+		752535751560D6C300B61FF5 /* jUnitExample.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = jUnitExample.xml; sourceTree = "<group>"; };
+		752535761561086600B61FF5 /* UIATestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIATestCase.h; sourceTree = "<group>"; };
+		752535771561086600B61FF5 /* UIATestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIATestCase.m; sourceTree = "<group>"; };
 		754BE40A155CBB9D00E3EE42 /* uia2junit */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = uia2junit; sourceTree = BUILT_PRODUCTS_DIR; };
-		754BE40E155CBB9D00E3EE42 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		754BE40E155CBB9D00E3EE42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		754BE410155CBB9D00E3EE42 /* uia2junit.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = uia2junit.1; sourceTree = "<group>"; };
+		754BE417155CBC4600E3EE42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		754BE41E155CC77D00E3EE42 /* UIAResultsConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAResultsConverter.h; sourceTree = "<group>"; };
+		754BE41F155CC77D00E3EE42 /* UIAResultsConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAResultsConverter.m; sourceTree = "<group>"; };
+		754BE422155CD13700E3EE42 /* KUCommandLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KUCommandLine.h; sourceTree = "<group>"; };
+		754BE423155CD13700E3EE42 /* KUCommandLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KUCommandLine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754BE418155CBC4600E3EE42 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +60,8 @@
 		754BE3FF155CBB9D00E3EE42 = {
 			isa = PBXGroup;
 			children = (
+				754BE421155CD08E00E3EE42 /* kernel */,
+				754BE417155CBC4600E3EE42 /* Foundation.framework */,
 				754BE40D155CBB9D00E3EE42 /* uia2junit */,
 				754BE40B155CBB9D00E3EE42 /* Products */,
 			);
@@ -60,10 +78,26 @@
 		754BE40D155CBB9D00E3EE42 /* uia2junit */ = {
 			isa = PBXGroup;
 			children = (
-				754BE40E155CBB9D00E3EE42 /* main.c */,
+				754BE40E155CBB9D00E3EE42 /* main.m */,
 				754BE410155CBB9D00E3EE42 /* uia2junit.1 */,
+				754BE41E155CC77D00E3EE42 /* UIAResultsConverter.h */,
+				754BE41F155CC77D00E3EE42 /* UIAResultsConverter.m */,
+				75253571155F240800B61FF5 /* UIASample.h */,
+				75253572155F240800B61FF5 /* UIASample.m */,
+				752535751560D6C300B61FF5 /* jUnitExample.xml */,
+				752535761561086600B61FF5 /* UIATestCase.h */,
+				752535771561086600B61FF5 /* UIATestCase.m */,
 			);
 			path = uia2junit;
+			sourceTree = "<group>";
+		};
+		754BE421155CD08E00E3EE42 /* kernel */ = {
+			isa = PBXGroup;
+			children = (
+				754BE422155CD13700E3EE42 /* KUCommandLine.h */,
+				754BE423155CD13700E3EE42 /* KUCommandLine.m */,
+			);
+			path = kernel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,7 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				754BE40F155CBB9D00E3EE42 /* main.c in Sources */,
+				754BE40F155CBB9D00E3EE42 /* main.m in Sources */,
+				754BE420155CC77D00E3EE42 /* UIAResultsConverter.m in Sources */,
+				754BE424155CD13700E3EE42 /* KUCommandLine.m in Sources */,
+				75253573155F240800B61FF5 /* UIASample.m in Sources */,
+				752535781561086600B61FF5 /* UIATestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +239,7 @@
 				754BE416155CBB9D00E3EE42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
