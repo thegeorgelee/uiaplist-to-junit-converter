@@ -18,9 +18,20 @@ int main(int argc, const char * argv[])
     NSLog (@"Starting uia2junit");
     
     // process the arguments
+    
     NSArray *required = [NSArray arrayWithObjects:@"inputPlist", @"outputPath", nil];
     KUCommandLine *commandLine = [[KUCommandLine alloc] initWithRequiredArgumentKeys:required];
 
+//x    BOOL isValidArgs = NO;
+    if (! [[commandLine allArguments] objectForKey:@"inputPlist"]) {
+        NSLog(@"Please specify the input PropertyList file.");
+        return 0;
+    }
+    if (! [[commandLine allArguments] objectForKey:@"outputPath"]) {
+        NSLog(@"Please specify the output file.");
+        return 0;
+    }
+    
     // create the converter
     UIAResultsConverter *converter = [[UIAResultsConverter alloc] initWithCommandLineArgs:[commandLine allArguments]];
     
