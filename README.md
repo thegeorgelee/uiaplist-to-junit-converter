@@ -9,9 +9,9 @@ This program converts the UIAutomation Property List output into a jUnit XML fil
 
 Just download, compile and copy the resulting binary to where you need it. Run with the following arguments (use full paths for now):
 
-uia2junit <source_plist> <output_path>
+uia2junit &lt;source_plist&gt; &lt;output_path&gt;
 
-uia2junit "/Users/<username>/Documents/auto/Run 1/Automation Results.plist" "/Users/<username>/Documents/auto/automation_results.xml"
+uia2junit "/Users/&lt;username&gt;/Documents/auto/Run 1/Automation Results.plist" "/Users/&lt;username&gt;/Documents/auto/automation_results.xml"
 
 
 ### Requirements
