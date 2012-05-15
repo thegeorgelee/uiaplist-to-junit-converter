@@ -18,7 +18,7 @@ uia2junit "/Users/&lt;username&gt;/Documents/auto/Run 1/Automation Results.plist
 
 This code has only been tested on:
 * XCode 4.3+ 
-* Lion 10.7+
+* OSX Lion 10.7+
 
 
 ### Bug reports
