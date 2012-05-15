@@ -2,32 +2,30 @@
 
 ## uiaplist-to-junit-converter
 
-This program converts the UIAutomation PropertyList output into a jUnit xml form readable by Jenkins Hudson.
+This program converts the UIAutomation Property List output into a jUnit XML file.  The output can then be fed into continuous integration programs such a Jenkins / Hudson as jUnit testsuites.
 
 
 ## Information
 
-Just download, compile and copy the resulting binary to where you need it.
-Run with the following arguments:
+Just download, compile and copy the resulting binary to where you need it. Run with the following arguments (use full paths for now):
 
 uia2junit <source_plist> <output_path>
 
 uia2junit "/Users/<username>/Documents/auto/Run 1/Automation Results.plist" "/Users/<username>/Documents/auto/automation_results.xml"
 
+
 ### Requirements
 
-This code has only be testing on:
+This code has only been tested on:
 * XCode 4.3+ 
 * Lion 10.7+
 
 
 ### Bug reports
 
-If you discover a problem with uiaplist-to-junit-converter, we would like to know about it. However, we ask that you please review these guidelines before submitting a bug report:
+If you discover a problem with uiaplist-to-junit-converter, we would like to know about it. However, we ask that you please review the open issues for possible duplicates before submitting a new report:
 
 https://github.com/thegeorgelee/uiaplist-to-junit-converter/issues
-
-https://github.com/plataformatec/uiaplist-to-junit-converter/Bug-reports
 
 If you found a security bug, do *NOT* use the GitHub issue tracker. Send an email to the maintainers listed at the bottom of the README.
 
@@ -53,4 +51,3 @@ https://github.com/thegeorgelee/uiaplist-to-junit-converter/contributors
 ## License
 
 New BSD License. Copyright (c) 2012 George Lee
-
