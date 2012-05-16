@@ -8,9 +8,11 @@
 
 #import "UIATestCase.h"
 #import "UIASample.h"
+#import "UIACommon.h"
 
 @implementation UIATestCase
-
+@synthesize name;
+@synthesize className;
 @synthesize testSample;
 @synthesize logSamples;
 
@@ -22,8 +24,10 @@
 }
 
 - (void) dealloc {
-    [testSample release];
-    [logSamples release];
+    [name release]; name = nil;
+    [className release]; className = nil;
+    [testSample release]; testSample = nil;
+    [logSamples release]; logSamples = nil;
 
     [super dealloc];
 }
@@ -52,6 +56,8 @@
 - (NSXMLElement *) toXML {
     NSXMLElement *testcase = [[NSXMLElement alloc] initWithName:@"testcase"];
     [testcase addAttribute:[NSXMLNode attributeWithName:@"timestamp" stringValue:[testSample timestampString]]];    
+    [testcase addAttribute:[NSXMLNode attributeWithName:@"name" stringValue:name]];
+    [testcase addAttribute:[NSXMLNode attributeWithName:@"classname" stringValue:className]];
     
     // loop through and add each of the debug statements
     for (UIASample *sample in logSamples) {
@@ -59,9 +65,17 @@
         [testcase addChild:log];
     }
     
+    // if success then add ourselves as a system out, else add as a failure
     // add ourselves as a system out
-    NSXMLElement *desc = [UIATestCase elementWithName:@"system-out" value:[testSample message]];
-    [testcase addChild:desc];
+    // LogType(Type) = Pass(5), Debug(0), Fail(7), Default(1)
+
+    if ([testSample sampleType] == UIA_SAMPLE_TYPE_FAIL) {
+        NSXMLElement *testfail = [UIATestCase elementWithName:@"error" value:[testSample message]];
+        [testcase addChild:testfail];
+    } else {
+        NSXMLElement *desc = [UIATestCase elementWithName:@"system-out" value:[testSample message]];
+        [testcase addChild:desc];
+    }
     
     return testcase;
 }

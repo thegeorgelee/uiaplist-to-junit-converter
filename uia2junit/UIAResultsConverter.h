@@ -16,8 +16,7 @@
 
 - (id) initWithCommandLineArgs:(NSDictionary *)args;
 - (NSXMLDocument *) convert:(NSDictionary *)plist;
-- (void) run;
-
+- (BOOL) run:(NSError **)error;
 
 @end
 

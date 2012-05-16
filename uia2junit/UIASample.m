@@ -7,12 +7,13 @@
 //
 
 #import "UIASample.h"
+#import "UIACommon.h"
 
 @implementation UIASample
 @synthesize logType;
 @synthesize message;
 @synthesize timestampString;
-@synthesize type;
+@synthesize sampleType;
 
 - (id) init {
     if (self = [super init]) {
@@ -26,7 +27,7 @@
         [self setLogType:[plist objectForKey:@"LogType"]];
         [self setMessage:[plist objectForKey:@"Message"]];
         [self setTimestampString:[plist objectForKey:@"Timestamp"]];
-        [self setType:[plist objectForKey:@"Type"]];
+        [self setSampleType:[[plist objectForKey:@"Type"] intValue]];
     }
     return self;
 }
@@ -35,7 +36,7 @@
 // LogType(Type) = Pass(5), Debug(0), Fail(7), Default(1)
 // Only two of them are actually results from a test case, the rest are log type statements
 - (BOOL) isaTest {
-    if ([logType isEqualToString:@"Pass"] || [logType isEqualToString:@"Fail"]) {
+    if (sampleType == UIA_SAMPLE_TYPE_PASS || sampleType == UIA_SAMPLE_TYPE_FAIL) {
         return YES;
     }
     return NO;
@@ -52,7 +53,7 @@
     [logType release]; logType = nil;
     [message release]; message = nil;
     [timestampString release]; timestampString = nil;
-    [type release]; type = nil;
+//    [sampleType release]; sampleType = nil;
     
     [super dealloc];
 }

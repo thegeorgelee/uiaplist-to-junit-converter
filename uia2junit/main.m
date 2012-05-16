@@ -36,7 +36,16 @@ int main(int argc, const char * argv[])
     UIAResultsConverter *converter = [[UIAResultsConverter alloc] initWithCommandLineArgs:[commandLine allArguments]];
     
     // this actually converts the plist to the jUnit
-    [converter run];
+    NSError *error = nil;
+    BOOL success = [converter run:&error];
+    
+    if (success) {
+        NSLog (@"Successful conversion");
+
+    } else {
+        NSLog(@"Failed conversion");
+    }
+    NSInteger rtnCode = (success) ? 0 : [error code];
     
     // we are done with it
     [converter release];
@@ -45,5 +54,5 @@ int main(int argc, const char * argv[])
 
     [pool drain];
     
-    return 0;    
+    return rtnCode;
 }

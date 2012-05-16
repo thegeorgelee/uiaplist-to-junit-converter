@@ -12,13 +12,13 @@
     NSString *logType;
     NSString *message;
     NSString *timestampString;
-    NSString *type;
+    NSInteger sampleType;
 }
 
 @property (nonatomic, retain) NSString *logType;
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) NSString *timestampString;
-@property (nonatomic, retain) NSString *type;
+@property (nonatomic) NSInteger sampleType;
 
 - (id) initWithDictionary:(NSDictionary *)plist;
 - (BOOL) isaTest;

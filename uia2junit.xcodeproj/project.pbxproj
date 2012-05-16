@@ -35,6 +35,7 @@
 		752535751560D6C300B61FF5 /* jUnitExample.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = jUnitExample.xml; sourceTree = "<group>"; };
 		752535761561086600B61FF5 /* UIATestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIATestCase.h; sourceTree = "<group>"; };
 		752535771561086600B61FF5 /* UIATestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIATestCase.m; sourceTree = "<group>"; };
+		752852361563410E00104E28 /* UIACommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIACommon.h; sourceTree = "<group>"; };
 		754BE40A155CBB9D00E3EE42 /* uia2junit */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = uia2junit; sourceTree = BUILT_PRODUCTS_DIR; };
 		754BE40E155CBB9D00E3EE42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		754BE410155CBB9D00E3EE42 /* uia2junit.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = uia2junit.1; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 				752535751560D6C300B61FF5 /* jUnitExample.xml */,
 				752535761561086600B61FF5 /* UIATestCase.h */,
 				752535771561086600B61FF5 /* UIATestCase.m */,
+				752852361563410E00104E28 /* UIACommon.h */,
 			);
 			path = uia2junit;
 			sourceTree = "<group>";
