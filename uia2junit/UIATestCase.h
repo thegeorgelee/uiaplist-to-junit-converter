@@ -13,7 +13,7 @@
     NSString *name;
     NSString *className;
     UIASample *testSample;
-    NSArray *logSamples;    
+    NSArray *logSamples;
 }
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *className;

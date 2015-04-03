@@ -9,14 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @interface UIAResultsConverter : NSObject {
-    NSDictionary *commandLineArgs;    
+    NSDictionary* commandLineArgs;
+    NSInteger passCount;
+    NSInteger failCount;
+    NSInteger totalTestCaseCount;
 }
 
-@property (nonatomic, retain) NSDictionary *commandLineArgs;
+@property (nonatomic, retain) NSDictionary* commandLineArgs;
 
-- (id) initWithCommandLineArgs:(NSDictionary *)args;
-- (NSXMLDocument *) convert:(NSDictionary *)plist;
-- (BOOL) run:(NSError **)error;
+- (id)initWithCommandLineArgs:(NSDictionary*)args;
+- (NSXMLDocument*)convert:(NSDictionary*)plist;
+- (BOOL)run:(NSError**)error;
 
 @end
-

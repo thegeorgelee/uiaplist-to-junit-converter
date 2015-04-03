@@ -10,7 +10,7 @@
 #define uia2junit_UIACommon_h
 
 // LogType(Type) = Pass(5), Debug(0), Fail(7), Default(1)
-#define UIA_SAMPLE_TYPE_PASS    5
+#define UIA_SAMPLE_TYPE_PASS    4
 #define UIA_SAMPLE_TYPE_FAIL    7
 #define UIA_SAMPLE_TYPE_DEFAULT 1
 #define UIA_SAMPLE_TYPE_DEBUG   0

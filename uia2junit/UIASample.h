@@ -8,16 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UIASample : NSObject {    
+@interface UIASample : NSObject {
     NSString *logType;
     NSString *message;
-    NSString *timestampString;
+    NSDate *timestampString;
     NSInteger sampleType;
 }
 
 @property (nonatomic, retain) NSString *logType;
 @property (nonatomic, retain) NSString *message;
-@property (nonatomic, retain) NSString *timestampString;
+@property (nonatomic, retain) NSDate *timestampString;
 @property (nonatomic) NSInteger sampleType;
 
 - (id) initWithDictionary:(NSDictionary *)plist;
