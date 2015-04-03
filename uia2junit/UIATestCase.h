@@ -20,6 +20,7 @@
 @property (nonatomic, retain) UIASample *testSample;
 @property (nonatomic, retain) NSArray *logSamples;
 
+
 - (NSXMLElement *) toXML;
 
 @end

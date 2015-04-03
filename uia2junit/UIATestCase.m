@@ -62,17 +62,17 @@
 - (NSXMLElement*)toXML
 {
     NSXMLElement* testcase = [[NSXMLElement alloc] initWithName:@"testcase"];
-    //[testcase addAttribute:[NSXMLNode attributeWithName:@"timestamp" stringValue:[testSample timestampString]]];
-    [testcase addAttribute:[NSXMLNode attributeWithName:@"time" stringValue:@"1.0"]];
-    [testcase addAttribute:[NSXMLNode attributeWithName:@"name" stringValue:name]];
+    NSString* testCaseDurationString = [NSString stringWithFormat:@"%ld", [testSample testCaseDuration]];
     [testcase addAttribute:[NSXMLNode attributeWithName:@"classname" stringValue:className]];
+    [testcase addAttribute:[NSXMLNode attributeWithName:@"name" stringValue:name]];
+    [testcase addAttribute:[NSXMLNode attributeWithName:@"time" stringValue:testCaseDurationString]];
     
+    //not adding log or debug statements since
     // loop through and add each of the debug statements
-    for (UIASample* sample in logSamples) {
-        //NSLog(@"sample message --> %d", [sample message]);
-        NSXMLElement* log = [UIATestCase elementWithName:@"system-out" value:[sample message]];
-        [testcase addChild:log];
-    }
+    //for (UIASample* sample in logSamples) {
+    //    NSXMLElement* log = [UIATestCase elementWithName:@"system-out" value:[sample message]];
+    //[testcase addChild:log];
+    //  }
     
     // if success then add ourselves as a system out, else add as a failure
     // add ourselves as a system out
@@ -81,12 +81,12 @@
     if ([testSample sampleType] == UIA_SAMPLE_TYPE_FAIL) {
         //NSLog(@"testSample message: %d", [testSample message]);
         NSXMLElement* testfail = [UIATestCase elementWithName:@"failure" value:[testSample message]];
-        [testcase addAttribute:[NSXMLNode attributeWithName:@"message" stringValue:[testSample message]]];
+        //[testcase addAttribute:[NSXMLNode attributeWithName:@"message" stringValue:[testSample message]]];
         [testcase addChild:testfail];
     }
     else {
-        NSXMLElement* desc = [UIATestCase elementWithName:@"system-out" value:[testSample message]];
-        [testcase addAttribute:[NSXMLNode attributeWithName:@"message" stringValue:[testSample message]]];
+        NSXMLElement* desc = [UIATestCase elementWithName:@"system-out" value:@""]; //[testSample message]];
+        //[testcase addAttribute:[NSXMLNode attributeWithName:@"message" stringValue:[testSample message]]];
         [testcase addChild:desc];
     }
     

@@ -13,6 +13,7 @@
 @synthesize logType;
 @synthesize message;
 @synthesize timestampString;
+@synthesize testCaseDuration;
 @synthesize sampleType;
 
 - (id)init
@@ -26,7 +27,6 @@
 {
     if (self = [super init]) {
         [self setLogType:[plist objectForKey:@"LogType"]];
-        NSLog(@"%@---", logType);
         [self setMessage:[plist objectForKey:@"Message"]];
         [self setTimestampString:[plist objectForKey:@"Timestamp"]];
         [self setSampleType:[[plist objectForKey:@"Type"] intValue]];
@@ -40,15 +40,14 @@
 - (BOOL)isaTest
 {
     if (sampleType == UIA_SAMPLE_TYPE_PASS || sampleType == UIA_SAMPLE_TYPE_FAIL) {
-        NSLog(@"timestamp-->%@", [self timestampString]);
         return YES;
     }
     return NO;
 }
 
-- (NSString*)description
+- (void)setTestCaseDuration:(long)newValue
 {
-    [NSString stringWithFormat:@"",logType];
+    testCaseDuration = newValue;
 }
 
 /*

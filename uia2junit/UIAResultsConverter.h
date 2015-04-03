@@ -18,7 +18,8 @@
 @property (nonatomic, retain) NSDictionary* commandLineArgs;
 
 - (id)initWithCommandLineArgs:(NSDictionary*)args;
+- (NSArray*)testCasesFromPList:(NSDictionary*)plist;
 - (NSXMLDocument*)convert:(NSDictionary*)plist;
 - (BOOL)run:(NSError**)error;
-
+- (BOOL)writeFile:(NSString*)outputPath xmlDoc:(NSXMLDocument*)xmlDoc error:(NSError**)error;
 @end
