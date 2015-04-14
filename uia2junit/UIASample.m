@@ -39,7 +39,7 @@
 // Only two of them are actually results from a test case, the rest are log type statements
 - (BOOL)isaTest
 {
-    if (sampleType == UIA_SAMPLE_TYPE_PASS || sampleType == UIA_SAMPLE_TYPE_FAIL) {
+    if (sampleType == UIA_SAMPLE_TYPE_PASS || sampleType == UIA_SAMPLE_TYPE_FAIL || sampleType == UIA_SAMPLE_TYPE_ERROR ) {
         return YES;
     }
     return NO;

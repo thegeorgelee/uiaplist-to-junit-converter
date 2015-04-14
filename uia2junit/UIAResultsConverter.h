@@ -12,6 +12,7 @@
     NSDictionary* commandLineArgs;
     NSInteger passCount;
     NSInteger failCount;
+    NSInteger errorCount;
     NSInteger totalTestCaseCount;
 }
 

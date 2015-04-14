@@ -94,6 +94,7 @@
     NSArray* testCases = [self testCasesFromPList:plist];
     passCount = 0;
     failCount = 0;
+    errorCount = 0;
     NSInteger i = 0;
     
     totalTestCaseCount = [testCases count];
@@ -157,15 +158,17 @@
         
         if ([logType isEqual:@"Pass"]) {
             passCount++;
-        }
-        else if ([logType isEqual:@"Fail"]) {
+        } else if ([logType isEqual:@"Fail"]) {
             failCount++;
+        } else if ([logType isEqual:@"Error"]) {
+            errorCount++;
         }
     }
     
     NSString* testcaseCount = [NSString stringWithFormat:@"%lu", (unsigned long)totalTestCaseCount];
     //NSString* passTestCount = [NSString stringWithFormat:@"%lu", (unsigned long)passCount];
     NSString* failTestCount = [NSString stringWithFormat:@"%lu", (unsigned long)failCount];
+    NSString* errorTestCount = [NSString stringWithFormat:@"%lu", (unsigned long)errorCount];
     NSString* suiteName = [NSString stringWithFormat:@"%@ %@", [commandLineArgs objectForKey:@"testSuite"], @"Instruments Test Suite"];
     
 #if DEBUG
@@ -176,7 +179,7 @@
     NSXMLElement* root = [[NSXMLElement alloc] initWithName:@"testsuite"];
     [root addAttribute:[NSXMLNode attributeWithName:@"name" stringValue:suiteName]];
     [root addAttribute:[NSXMLNode attributeWithName:@"tests" stringValue:testcaseCount]];
-    [root addAttribute:[NSXMLNode attributeWithName:@"errors" stringValue:@"0"]];
+    [root addAttribute:[NSXMLNode attributeWithName:@"errors" stringValue:errorTestCount]];
     [root addAttribute:[NSXMLNode attributeWithName:@"failures" stringValue:failTestCount]];
     [root addAttribute:[NSXMLNode attributeWithName:@"skip" stringValue:@"0"]];
     
