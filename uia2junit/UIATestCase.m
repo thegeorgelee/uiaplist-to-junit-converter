@@ -78,7 +78,7 @@
     // add ourselves as a system out
     // LogType(Type) = Pass(5), Debug(0), Fail(7), Default(1)
     
-    if ([testSample sampleType] == UIA_SAMPLE_TYPE_FAIL) {
+    if ([testSample sampleType] == UIA_SAMPLE_TYPE_FAIL || [testSample sampleType] == UIA_SAMPLE_TYPE_ERROR) {
         //NSLog(@"testSample message: %d", [testSample message]);
         NSXMLElement* testfail = [UIATestCase elementWithName:@"failure" value:[testSample message]];
         //[testcase addAttribute:[NSXMLNode attributeWithName:@"message" stringValue:[testSample message]]];
