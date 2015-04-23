@@ -13,7 +13,7 @@
 @synthesize  allArguments;
 
 // Command lines have optional arguments and required arguments
-// given a set of 
+// given a set of
 
 // Call:
 // Passed in command line:
@@ -23,7 +23,7 @@
     if (self = [super init]) {
         // all arguments on the command line
         NSArray *clAll = [[NSProcessInfo processInfo] arguments];
-        NSLog(@"clAll=%@", clAll);        
+        NSLog(@"clAll=%@", clAll);
         
         // set the class variable
         allArguments = [[NSMutableDictionary alloc] initWithCapacity:[clAll count]];
@@ -56,11 +56,11 @@
                 }
             } else {
                 [clRequired addObject:[clAll objectAtIndex:i]];
-                i++;                
+                i++;
             }
         }
-        NSLog(@"clRequired=%@", clRequired);        
-
+        NSLog(@"clRequired=%@", clRequired);
+        
         // if there are more args then required then just drop them, if fewer then required
         for (NSInteger i=0; i<[requiredArgKeys count]; i++) {
             if (i < [clRequired count] && [clRequired objectAtIndex:i]) {
@@ -69,13 +69,13 @@
                 NSLog(@"Cannot find arguments for: %@", [clRequired objectAtIndex:i]);
             }
         }
-    
-//        NSDictionary *reqDict = [NSDictionary dictionaryWithObjects:clRequired forKeys:requiredArgKeys];
-//        [allArguments addEntriesFromDictionary:reqDict];
         
-        NSLog(@"allArguments=%@", allArguments);        
+        //        NSDictionary *reqDict = [NSDictionary dictionaryWithObjects:clRequired forKeys:requiredArgKeys];
+        //        [allArguments addEntriesFromDictionary:reqDict];
+        
+        NSLog(@"allArguments=%@", allArguments);
     }
-    return self;    
+    return self;
 }
 
 - (void) junk {

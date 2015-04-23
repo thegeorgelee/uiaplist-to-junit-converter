@@ -9,10 +9,11 @@
 #ifndef uia2junit_UIACommon_h
 #define uia2junit_UIACommon_h
 
-// LogType(Type) = Pass(5), Debug(0), Fail(7), Default(1)
+// LogType(Type) = Pass(5), Debug(0), Fail(7), Default(1), Error(10)
 #define UIA_SAMPLE_TYPE_PASS    5
 #define UIA_SAMPLE_TYPE_FAIL    7
 #define UIA_SAMPLE_TYPE_DEFAULT 1
 #define UIA_SAMPLE_TYPE_DEBUG   0
+#define UIA_SAMPLE_TYPE_ERROR   10
 
 #endif

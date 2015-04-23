@@ -13,12 +13,13 @@
     NSString *name;
     NSString *className;
     UIASample *testSample;
-    NSArray *logSamples;    
+    NSArray *logSamples;
 }
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *className;
 @property (nonatomic, retain) UIASample *testSample;
 @property (nonatomic, retain) NSArray *logSamples;
+
 
 - (NSXMLElement *) toXML;
 

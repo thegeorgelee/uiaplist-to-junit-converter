@@ -16,19 +16,24 @@ int main(int argc, const char * argv[])
 {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     NSLog (@"Starting uia2junit");
+    NSString *usage = @"Usage: uia2junit <inputPlist> <outputPath> <testsuite>\n\n<classname>    The name of the testsuite";
     
     // process the arguments
     
-    NSArray *required = [NSArray arrayWithObjects:@"inputPlist", @"outputPath", nil];
+    NSArray *required = [NSArray arrayWithObjects:@"inputPlist", @"outputPath", @"testSuite", nil];
     KUCommandLine *commandLine = [[KUCommandLine alloc] initWithRequiredArgumentKeys:required];
-
-//x    BOOL isValidArgs = NO;
+    
+    //x    BOOL isValidArgs = NO;
     if (! [[commandLine allArguments] objectForKey:@"inputPlist"]) {
-        NSLog(@"Please specify the input PropertyList file.");
+        NSLog( @"%@", usage );
         return 0;
     }
     if (! [[commandLine allArguments] objectForKey:@"outputPath"]) {
-        NSLog(@"Please specify the output file.");
+        NSLog( @"%@", usage );
+        return 0;
+    }
+    if (! [[commandLine allArguments] objectForKey:@"testSuite"]) {
+        NSLog( @"%@", usage );
         return 0;
     }
     
@@ -41,7 +46,7 @@ int main(int argc, const char * argv[])
     
     if (success) {
         NSLog (@"Successful conversion");
-
+        
     } else {
         NSLog(@"Failed conversion");
     }
@@ -51,8 +56,8 @@ int main(int argc, const char * argv[])
     [converter release];
     
     NSLog (@"Ending uia2junit");
-
+    
     [pool drain];
     
-    return rtnCode;
+    return  rtnCode;
 }

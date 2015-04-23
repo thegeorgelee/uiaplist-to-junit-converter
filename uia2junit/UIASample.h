@@ -8,19 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UIASample : NSObject {    
-    NSString *logType;
-    NSString *message;
-    NSString *timestampString;
+@interface UIASample : NSObject {
+    NSString* logType;
+    NSString* message;
+    NSDate* timestampString;
     NSInteger sampleType;
+    long testCaseDuration;
 }
 
-@property (nonatomic, retain) NSString *logType;
-@property (nonatomic, retain) NSString *message;
-@property (nonatomic, retain) NSString *timestampString;
+@property (nonatomic, retain) NSString* logType;
+@property (nonatomic, retain) NSString* message;
+@property (nonatomic, retain) NSDate* timestampString;
 @property (nonatomic) NSInteger sampleType;
+@property (nonatomic) long testCaseDuration;
 
-- (id) initWithDictionary:(NSDictionary *)plist;
-- (BOOL) isaTest;
+- (id)initWithDictionary:(NSDictionary*)plist;
+- (BOOL)isaTest;
 
 @end
